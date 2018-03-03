@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml'
 gem 'haml-rails'
+gem 'paperclip', '~> 5.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
