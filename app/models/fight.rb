@@ -9,7 +9,6 @@ class Fight < ApplicationRecord
   def run
     self.winner = pretendors.first
     self.loser = pretendors.second
-    sleep 1
     save
     self
   end

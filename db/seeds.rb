@@ -23,7 +23,6 @@ fighters.each do |fighter|
   opponents.each do |opponent|
     f = Fight.new(pretendors: [fighter, opponent].shuffle)
     f.run
-    f.save
   end
 end
 
