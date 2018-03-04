@@ -22,11 +22,26 @@ class FightsManager extends Component {
       ([fighters, fights]) => {
         this.setState({ fighters, fights })
 
-        $('#fightersPickerModal').on('hidden.bs.modal', () =>
-          this.setState({ fightStatus: 'preparation' })
-        )
+        $('#fightersPickerModal').on('hidden.bs.modal', () => {
+          // reload all the page
+          if (this.state.fightResult) {
+            location.href = '/'
+          } else {
+            // reinitialize the state
+            this.setState({
+              fightStatus: 'preparation',
+              fightResult: null,
+              error: null
+            })
+          }
+        })
       }
     )
+  }
+
+  componentWillUnmount() {
+    // prevent leak memory
+    $('#fightersPickerModal').off('hidden.bs.modal')
   }
 
   handleFight(pretendors) {
@@ -34,8 +49,12 @@ class FightsManager extends Component {
       this.setState({ error: 'Please choose 2 different pretendors' })
     } else {
       this.setState({ error: null, fightStatus: 'pending' })
-      FightsApi.create(pretendors).then(result =>
-        this.setState({ ...result, fightStatus: 'done' })
+      FightsApi.create(pretendors).then(fightResult =>
+        setTimeout(
+          // we simulate that a very smart fight algo is running server side
+          () => this.setState({ fightResult, fightStatus: 'done' }),
+          600
+        )
       )
     }
   }
@@ -59,9 +78,7 @@ class FightsManager extends Component {
         </button>
         {this.state.fighters.length ? (
           <FightersPickerModal
-            fighters={this.state.fighters}
-            fightStatus={this.state.fightStatus}
-            error={this.state.error}
+            {...this.state}
             handleFight={fighters => this.handleFight(fighters)}
           />
         ) : null}
