@@ -3,8 +3,8 @@
   %head
     %title Mylittlefighters
     = csrf_meta_tags
-    = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
+    %script{src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'}
   %body
     =render 'partials/menu'
     = yield
