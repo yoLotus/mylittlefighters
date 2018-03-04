@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :set_character, only: %i[show edit update destroy]
 
   # GET /characters
   # GET /characters.json
   def index
-      @characters = Character.all
+    @characters = Character.all
   end
 
   # GET /characters/new
@@ -13,8 +15,7 @@ class CharactersController < ApplicationController
   end
 
   # GET /characters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /characters
   # POST /characters.json
@@ -57,13 +58,14 @@ class CharactersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_character
-      @character = Character.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def character_params
-      params.require(:character).permit(:name, :toughness, :power, :avatar)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_character
+    @character = Character.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def character_params
+    params.require(:character).permit(:name, :toughness, :power, :avatar)
+  end
 end

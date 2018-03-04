@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FightsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
@@ -6,7 +8,7 @@ class FightsController < ApplicationController
   end
 
   def create
-    render json: Fight.new(pretendors: fight_params[:pretendors].map{ |p| Character.find(p)}).run
+    render json: Fight.new(pretendors: fight_params[:pretendors].map { |p| Character.find(p) }).run
   end
 
   private
