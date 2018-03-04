@@ -1,25 +1,29 @@
-%h1 Listing characters
+%main
+  %section.jumbotron.text-center
+    .container
+      %h1.jumbotron-heading Welcome to the arena
+      %p.lead.text-muted
+        Hello folks ! Please pick 2 braverous soldiers to fight each
+        other in the next list ! You can also create your own soldier and
+        make them enter the arena !
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Toughness
-      %th Power
-      %th
-      %th
-      %th
+  .container
+    .row
+      - @characters.each do |character|
+        .col-md-3
+          .card.mb-4.box-shadow
+            %img.card-img-top{title: character.name, alt: character.name, src: character.avatar.url(:medium)}
+            .card-body
+              %p.card-text
+                = "#{character.name} #{character.power} / #{character.toughness}"
+              .d-flex.justify-content-center.align-items-center
+                .btn-group
+                  %a.btn.btn-sm.btn-outline-secondary{type: 'button', href: edit_character_path(character)}
+                    Edit
+                  = link_to 'Remove', character_path(character), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' }
 
-  %tbody
-    - @characters.each do |character|
-      %tr
-        %td= character.name
-        %td= character.toughness
-        %td= character.power
-        %td= link_to 'Show', character
-        %td= link_to 'Edit', edit_character_path(character)
-        %td= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' }
+      .col-md-3
+        %a.btn.btn-sm.btn-outline-secondary{type: 'button', href: new_character_path}
+          Add your own braverous soldier
 
-%br
-
-= link_to 'New Character', new_character_path
+= javascript_pack_tag 'characters/index'

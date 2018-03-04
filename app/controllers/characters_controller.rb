@@ -4,12 +4,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all
-  end
-
-  # GET /characters/1
-  # GET /characters/1.json
-  def show
+      @characters = Character.all
   end
 
   # GET /characters/new
@@ -28,8 +23,8 @@ class CharactersController < ApplicationController
 
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
-        format.json { render :show, status: :created, location: @character }
+        format.html { redirect_to characters_url, notice: 'Character was successfully created.' }
+        format.json { render :index, status: :created }
       else
         format.html { render :new }
         format.json { render json: @character.errors, status: :unprocessable_entity }
@@ -42,8 +37,8 @@ class CharactersController < ApplicationController
   def update
     respond_to do |format|
       if @character.update(character_params)
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
-        format.json { render :show, status: :ok, location: @character }
+        format.html { redirect_to characters_url, notice: 'Character was successfully updated.' }
+        format.json { render :index, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @character.errors, status: :unprocessable_entity }
@@ -69,6 +64,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :toughness, :power)
+      params.require(:character).permit(:name, :toughness, :power, :avatar)
     end
 end
