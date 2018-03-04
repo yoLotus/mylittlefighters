@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-7.times do
+3.times do
   FactoryBot.create(:character)
 end
