@@ -17,7 +17,21 @@
             %img.card-img-top{title: character.name, alt: character.name, src: character.avatar.url(:medium)}
             .card-body
               %p.card-text
-                = "#{character.name} #{character.power} / #{character.toughness}"
+                #{character.name}
+              .skills.d-flex.justify-content-between
+                .item
+                  %i.fa.fa-gavel{title: 'Power'}
+                  #{character.power}
+                .item
+                  %i.fa.fa-trophy{title: 'Number of victories'}
+                  #{character.victories.count}
+              .perfs.d-flex.justify-content-between
+                .item
+                  %i.fa.fa-heart{title: 'Toughness'}
+                  #{character.toughness}
+                .item
+                  %i.fa.fa-times{title: 'Number of defeats'}
+                  #{character.defeats.count}
               .d-flex.justify-content-center.align-items-center
                 .btn-group
                   %a.btn.btn-sm.btn-outline-secondary{type: 'button', href: edit_character_path(character)}
@@ -25,7 +39,7 @@
                   = link_to 'Remove', character_path(character), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' }
 
       .col-md-3
-        %a.btn.btn-sm.btn-outline-secondary{type: 'button', href: new_character_path}
+        %a.btn.btn-sm.btn-outline-secondary.w-100{type: 'button', href: new_character_path}
           Add your own braverous soldier
 
 = javascript_pack_tag 'characters/index'
