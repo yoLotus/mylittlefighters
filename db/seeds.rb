@@ -6,7 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Fill the database with characters...'
 
-3.times do
+5.times do
   FactoryBot.create(:character)
 end
+
+puts '...and make them fights'
+
+fighters = Character.all.shuffle
+
+fighters.each do |fighter|
+  # remove current loop fighter to not make him fight against himself
+  opponents = fighters.reject { |f| fighter.id == f.id }
+
+  opponents.each do |opponent|
+    f = Fight.new(pretendors: [fighter, opponent].shuffle)
+    f.run
+    f.save
+  end
+end
+
+puts 'done ! Run `rails s` and visit 0.0.0.0:3000'
