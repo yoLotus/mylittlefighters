@@ -25,10 +25,31 @@ class FightersPickerModal extends Component {
     return null
   }
 
+  displayPretendors() {
+    // show the winner if exists
+    if (this.props.fightResult) {
+      return (
+        <div className="d-flex justify-content-center align-items-center">
+          <img src={this.displayAvatar(this.props.fightResult.winner_id)} />
+          <h1 className="font-weight-bold">Winner !</h1>
+        </div>
+      )
+    } else {
+      // display pretendors about to fight
+      return (
+        <div className="d-flex justify-content-around align-items-center">
+          <img src={this.displayAvatar(this.state.fighter1)} />
+          <h1 className="font-weight-bold">VS</h1>
+          <img src={this.displayAvatar(this.state.fighter2)} />
+        </div>
+      )
+    }
+  }
+
   displayActionButtons() {
-    let CloseButton = () => (
+    let CloseButton = ({ text }) => (
       <button type="button" className="btn btn-secondary" data-dismiss="modal">
-        Keep calm
+        {text}
       </button>
     )
 
@@ -36,7 +57,7 @@ class FightersPickerModal extends Component {
       case 'preparation':
         return (
           <div className="modal-footer">
-            <CloseButton />
+            <CloseButton text={'Keep Calm'} />
             <button type="submit" className="btn btn-primary">
               Let's Fight !
             </button>
@@ -46,7 +67,7 @@ class FightersPickerModal extends Component {
       case 'pending':
         return (
           <div className="modal-footer">
-            <CloseButton />
+            <CloseButton text={'Keep Calm'} />
             <button type="button" className="btn btn-primary">
               <i className="fa fa-spinner fa-spin" /> Fighting...
             </button>
@@ -57,7 +78,7 @@ class FightersPickerModal extends Component {
       default:
         return (
           <div className="modal-footer">
-            <CloseButton />
+            <CloseButton text={'Back'} />
           </div>
         )
     }
@@ -96,6 +117,7 @@ class FightersPickerModal extends Component {
                     onChange={e => this.setState({ fighter1: e.target.value })}
                     className="form-control"
                     id="fighter1"
+                    disabled={this.props.fightStatus !== 'preparation'}
                   >
                     {this.props.fighters.map(fighter => (
                       <option key={`1_${fighter.id}`} value={fighter.id}>
@@ -111,6 +133,7 @@ class FightersPickerModal extends Component {
                     className="form-control"
                     id="fighter2"
                     value={this.state.fighter2}
+                    disabled={this.props.fightStatus !== 'preparation'}
                   >
                     {this.props.fighters.map((fighter, index) => (
                       <option key={`2_${fighter.id}`} value={fighter.id}>
@@ -119,11 +142,7 @@ class FightersPickerModal extends Component {
                     ))}
                   </select>
                 </div>
-                <div className="d-flex justify-content-around align-items-center">
-                  <img src={this.displayAvatar(this.state.fighter1)} />
-                  <h1 className="font-weight-bold">VS</h1>
-                  <img src={this.displayAvatar(this.state.fighter2)} />
-                </div>
+                {this.displayPretendors()}
                 <p className="text-danger">{this.props.error}</p>
               </div>
               {this.displayActionButtons()}
