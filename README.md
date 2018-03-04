@@ -1,24 +1,33 @@
-# README
+# My Little Warriors
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my answer for CaptainContrat
+[test](https://github.com/captaincontrat/jobs).
 
-Things you may want to cover:
 
-* Ruby version
+## Usage
 
-* System dependencies
+### First run
 
-* Configuration
+Prefill the database with characters and fights by running:
 
-* Database creation
+    `bundle install`
+    `rails db:setup`
 
-* Database initialization
+### Dev server
 
-* How to run the test suite
+Please run the dev server and visit 0.0.0.0:3000
 
-* Services (job queues, cache servers, search engines, etc.)
+    `rails s`
 
-* Deployment instructions
+## What I've done until now
 
-* ...
+- [x] front page with a message
+- [x] prefill the front page with characters
+- [x] CRUD on characters
+- [x] Launch Fights
+- [x] List all past fights
+- [x] Show some fight metrics on characters
+- [ ] Smart algo for fights
+- [ ] Xp points
+- [ ] use weapons / shields
+- [ ] add tests (Rspec)
