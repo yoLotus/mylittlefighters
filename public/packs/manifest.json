@@ -1,0 +1,18 @@
+{
+  "api/characters.js": "/packs/api/characters-e7e6c80b7b1f5009ae35.js",
+  "api/characters.js.map": "/packs/api/characters-e7e6c80b7b1f5009ae35.js.map",
+  "api/fights.js": "/packs/api/fights-26cf5a58a4a750e1ff8e.js",
+  "api/fights.js.map": "/packs/api/fights-26cf5a58a4a750e1ff8e.js.map",
+  "application.css": "/packs/application-56e19ddb8f87eff33ef43dbcc849632d.css",
+  "application.css.map": "/packs/application-56e19ddb8f87eff33ef43dbcc849632d.css.map",
+  "application.js": "/packs/application-9f732c9bc80a331fc93d.js",
+  "application.js.map": "/packs/application-9f732c9bc80a331fc93d.js.map",
+  "characters/index.js": "/packs/characters/index-8d9eafc7f1e675bd4837.js",
+  "characters/index.js.map": "/packs/characters/index-8d9eafc7f1e675bd4837.js.map",
+  "fights/components/fighters-picker-modal.js": "/packs/fights/components/fighters-picker-modal-c018944ea6a07bbefcb4.js",
+  "fights/components/fighters-picker-modal.js.map": "/packs/fights/components/fighters-picker-modal-c018944ea6a07bbefcb4.js.map",
+  "fights/components/historic-modal.js": "/packs/fights/components/historic-modal-a52f6bbb4a7318eeaf0c.js",
+  "fights/components/historic-modal.js.map": "/packs/fights/components/historic-modal-a52f6bbb4a7318eeaf0c.js.map",
+  "fights/index.js": "/packs/fights/index-4f3ee7bbdd17f2d6c606.js",
+  "fights/index.js.map": "/packs/fights/index-4f3ee7bbdd17f2d6c606.js.map"
+}
