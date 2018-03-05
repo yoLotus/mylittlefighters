@@ -13,8 +13,8 @@ used.
 
 Prefill the database with characters and fights by running:
 
-    `bundle install`
-    `rails db:setup`
+    bundle install
+    rails db:setup
 
 Please, note that seeds pick name, power, toughness and picture
 profile randomly in limited list of choices, so some characters can
@@ -24,7 +24,19 @@ have same name or picture profile.
 
 Please run the dev server and visit 0.0.0.0:3000
 
-    `rails s`
+    rails s
+
+### Dev assets
+
+Node 8.x and yarn 1.x is necessary. Do `nvm use` in the root project
+if you use [nvm](https://github.com/creationix/nvm). Next:
+
+    yarn
+    ./bin/webpack-dev-server
+
+It will watch for changes in any `js` files and compile on the
+fly. See [webpacker](https://github.com/rails/webpacker) doc for
+further information.
 
 ## What I've done until now
 
@@ -44,7 +56,7 @@ Please run the dev server and visit 0.0.0.0:3000
 
 - Rails 5.1.5
 - Ruby 2.4.1
-- node 8.x for assets build
+- node 8.x and yarn 1.x for assets build
 - character CRUD is made with classic RoR best practises (I hope so !)
 - Fights management is fully handled with React
 - Bootstrap 4 for styling (I like flex box)
