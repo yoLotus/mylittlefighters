@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class FightersPickerModal extends Component {
   constructor(props) {
@@ -152,6 +153,22 @@ class FightersPickerModal extends Component {
       </div>
     )
   }
+}
+
+FightersPickerModal.propTypes = {
+  // required props
+  fighters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number
+    })
+  ).isRequired,
+  handleFight: PropTypes.func.isRequired,
+
+  // optionals props
+  fightStatus: PropTypes.string,
+  fightResult: PropTypes.shape({
+    winner_id: PropTypes.number.isRequired
+  })
 }
 
 export default FightersPickerModal

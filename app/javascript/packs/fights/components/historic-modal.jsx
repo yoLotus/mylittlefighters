@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class HistoricModal extends Component {
   constructor(props) {
@@ -66,6 +67,16 @@ class HistoricModal extends Component {
       </div>
     )
   }
+}
+
+HistoricModal.propTypes {
+  fights: Proptypes.arrayOf(
+    Proptypes.shape({
+      winner: string.isRequired,
+      loser: string.isRequired,
+      created_at: string.isRequired
+    })
+  ).isRequired
 }
 
 export default HistoricModal
