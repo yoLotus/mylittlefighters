@@ -12,11 +12,11 @@
 
   .form-group
     = f.label :toughness
-    = f.number_field :toughness, class: 'form-control', required: true, max: 10, min: 0
+    = f.number_field :toughness, class: 'form-control', required: true, max: 100, min: 50
 
   .form-group
     = f.label :power
-    = f.number_field :power, class: 'form-control', required: true, max: 10, min: 0
+    = f.number_field :power, class: 'form-control', required: true, max: 10, min: 1
 
   .form-group
     = f.label :avatar

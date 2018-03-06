@@ -15,7 +15,7 @@ FactoryBot.define do
         'Kitty'
       ].sample
     }
-    toughness { (1..10).to_a.sample }
+    toughness { (50..100).to_a.sample }
     power { (1..10).to_a.sample }
     avatar { File.new(IMAGES_FIXTURE_ROOT.join(IMAGES_FIXTURE_ROOT.entries[2..-1].sample).to_s) }
   end
