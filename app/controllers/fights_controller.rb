@@ -8,7 +8,8 @@ class FightsController < ApplicationController
   end
 
   def create
-    render json: Fight.new(pretendors: fight_params[:pretendors].map { |p| Character.find(p) }).run
+    fight = FightService.new(*fight_params[:pretendors]).run
+    render json: fight
   end
 
   private

@@ -50,11 +50,7 @@ class FightsManager extends Component {
     } else {
       this.setState({ error: null, fightStatus: 'pending' })
       FightsApi.create(pretendors).then(fightResult =>
-        setTimeout(
-          // we simulate that a very smart fight algo is running server side
-          () => this.setState({ fightResult, fightStatus: 'done' }),
-          600
-        )
+        this.setState({ fightResult, fightStatus: 'done' })
       )
     }
   }
