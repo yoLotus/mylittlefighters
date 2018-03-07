@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "/packs/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 216);
+/******/ 	return __webpack_require__(__webpack_require__.s = 218);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 216:
+/***/ 218:
 /*!**************************************************!*\
   !*** ./app/javascript/packs/characters/index.js ***!
   \**************************************************/
@@ -75,13 +75,13 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery_ujs__ = __webpack_require__(/*! jquery-ujs */ 217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery_ujs__ = __webpack_require__(/*! jquery-ujs */ 219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery_ujs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery_ujs__);
 
 
 /***/ }),
 
-/***/ 217:
+/***/ 219:
 /*!**********************************************!*\
   !*** ./node_modules/jquery-ujs/src/rails.js ***!
   \**********************************************/
@@ -648,4 +648,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index-8d9eafc7f1e675bd4837.js.map
+//# sourceMappingURL=index-3e28f3685aa7cf991a6d.js.map

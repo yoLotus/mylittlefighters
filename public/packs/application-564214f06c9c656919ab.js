@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "/packs/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 215);
+/******/ 	return __webpack_require__(__webpack_require__.s = 217);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 215:
+/***/ 217:
 /*!***********************************************!*\
   !*** ./app/javascript/packs/application.scss ***!
   \***********************************************/
@@ -78,4 +78,4 @@
 /***/ })
 
 /******/ });
-//# sourceMappingURL=application-9f732c9bc80a331fc93d.js.map
+//# sourceMappingURL=application-564214f06c9c656919ab.js.map
