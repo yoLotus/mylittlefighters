@@ -21,8 +21,7 @@ fighters.each do |fighter|
   opponents = fighters.reject { |f| fighter.id == f.id }
 
   opponents.each do |opponent|
-    f = Fight.new(pretendors: [fighter, opponent].shuffle)
-    f.run
+    FightService.new(fighter.id, opponent.id).run
   end
 end
 
