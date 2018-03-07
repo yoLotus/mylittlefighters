@@ -69,12 +69,12 @@ class HistoricModal extends Component {
   }
 }
 
-HistoricModal.propTypes {
-  fights: Proptypes.arrayOf(
-    Proptypes.shape({
-      winner: string.isRequired,
-      loser: string.isRequired,
-      created_at: string.isRequired
+HistoricModal.propTypes = {
+  fights: PropTypes.arrayOf(
+    PropTypes.shape({
+      winner: PropTypes.string.isRequired,
+      loser: PropTypes.string.isRequired,
+      created_at: PropTypes.string.isRequired
     })
   ).isRequired
 }
