@@ -6,9 +6,9 @@ require 'active_support/concern'
 module Fightable
   extend ActiveSupport::Concern
 
-  # Fight model must define with method correspond to its total health
-  # before starting to fight and witch method define its power value
-  # See the definition of the Character model as an example
+  # Fight model must define which method correspond to its total health
+  # before starting to fight and which method define its power value.
+  # See the definition of the Character model as an example use.
   class_methods do
     def start_health_method method_name
       @@start_health_method = method_name
@@ -25,7 +25,7 @@ module Fightable
     @health ||= self.send(@@start_health_method)
   end
 
-  # Set the health when the character heals or being attacked
+  # Set the health when the character cures itsself or being attacked
   def health= value
     @health = value
     @health = 0 if @health < 0

@@ -6,13 +6,13 @@ class FightService
     @fighters = [@character1, @character2]
   end
 
-  # A fight keep going on until one of the two characters has its
+  # A fight keeps going on until one of the two characters has its
   # toughness points equal or lower than 0. While loop lets the 2
-  # characters attacke each other. If both of them have lose all they
+  # characters attack each other. If both of them have lose all they
   # toughness points, let the queen chose the winner.
   def run
-    # Maybe one of the first time of my life I use while loop in
-    # ruby. Is there a better way ?
+    # Maybe the first time of my life I use while loop in ruby. Is
+    # there a better way ?
     while show_must_go_on?
       prepare_for_round
       make_round
