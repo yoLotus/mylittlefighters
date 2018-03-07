@@ -46,7 +46,7 @@ further information.
 - [x] Launch Fights
 - [x] List all past fights
 - [x] Show some fight metrics on characters
-- [ ] Smart algo for fights (for example by running it in a worker)
+- [X] Smart algo for fights
 - [ ] Xp points
 - [ ] use weapons / shields
 - [ ] add tests with Rspec, outch :-(
