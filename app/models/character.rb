@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Character < ApplicationRecord
+  include Fightable
+  start_health_method :toughness
+  power_method :power
+
   has_many :victories, class_name: 'Fight', foreign_key: 'winner_id'
   has_many :defeats, class_name: 'Fight', foreign_key: 'loser_id'
 
